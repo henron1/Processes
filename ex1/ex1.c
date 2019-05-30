@@ -5,10 +5,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+int x;
 int main(void)
 {
     // Your code here
-
+    int x = 100;
+    int x = fork();
     return 0;
 }
