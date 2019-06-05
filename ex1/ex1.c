@@ -5,10 +5,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+int x;
 int main(void)
 {
     // Your code here
+    printf("parent\n");
+    x = 100;
+    printf("x is equal to %i\n", x);
+    fork();
+    printf("x is equal to %i in the forked process\n", x);
 
-    return 0;
 }

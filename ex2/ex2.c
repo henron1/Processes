@@ -9,6 +9,21 @@
 int main(void)
 {
     // Your code here 
-    
+    FILE *fp;
+    int c;
+    int n;
+
+    fp = fopen("text.txt", "r");
+    c = fork();
+    n = fgetc(fp);
+    if (c == 0)
+    {
+        printf("this is the child process with %c char \n", n);
+    }
+    else
+    {
+        printf("this is the parent process with %c char \n", n);
+    }
+    fclose(fp);
     return 0;
 }
