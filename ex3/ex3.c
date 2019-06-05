@@ -10,16 +10,16 @@
 int main(void)
 {
     // Your code here
-    int counter = fork();
-    if (counter == 0)
+    int forkcheck = fork();
+    if (forkcheck == 0)
     {
-        printf("This is the child process \n");
+        printf("This is the child process and I say HELLO \n");
         exit(1);
     }
     else
     {
         wait(NULL);
-        printf("This is the parent process \n");
+        printf("This is the parent process and I say GOODBYE \n");
     }
 
     return 0;
