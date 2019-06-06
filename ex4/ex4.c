@@ -10,7 +10,18 @@
 
 int main(void)
 {
-    // Your code here    
-
+    // Your code here
+    printf("this is the parent process!\n");
+    int clone = fork();
+    if (clone < 0) {
+        printf("fork failed\n");
+        exit(1);
+    } else if (clone == 0) {
+        printf("this is a child process\n");
+        char *args[] = {"ls", "-l", NULL};
+        execvp("ls", args);
+    } else {
+        int wc = waitpid(clone, NULL, 0);
+    }
     return 0;
 }
